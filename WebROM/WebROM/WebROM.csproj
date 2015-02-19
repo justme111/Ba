@@ -206,7 +206,12 @@
     <Content Include="AdminNutzerAnlegen.aspx" />
     <Content Include="StudieAnlegenStep1.aspx" />
     <Content Include="StudieAnlegenStep2.aspx" />
-    <Content Include="WebForm4.aspx" />
+    <Content Include="StudieAnlegenStep3.aspx">
+      <BrowseToURL>~/StudieAnlegenStep3.aspx</BrowseToURL>
+    </Content>
+    <Content Include="StudieAnlegenStep4.aspx" />
+    <Content Include="PatientenEintragenStep1WebForm6.aspx" />
+    <Content Include="PatientenEintragenStep2.aspx" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -340,12 +345,33 @@
     <Compile Include="StudieAnlegenStep2.aspx.designer.cs">
       <DependentUpon>StudieAnlegenStep2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm4.aspx.cs">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
+    <Compile Include="StudieAnlegenStep3.aspx.cs">
+      <DependentUpon>StudieAnlegenStep3.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm4.aspx.designer.cs">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
+    <Compile Include="StudieAnlegenStep3.aspx.designer.cs">
+      <DependentUpon>StudieAnlegenStep3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudieAnlegenStep4.aspx.cs">
+      <DependentUpon>StudieAnlegenStep4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudieAnlegenStep4.aspx.designer.cs">
+      <DependentUpon>StudieAnlegenStep4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatientenEintragenStep1WebForm6.aspx.cs">
+      <DependentUpon>PatientenEintragenStep1WebForm6.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientenEintragenStep1WebForm6.aspx.designer.cs">
+      <DependentUpon>PatientenEintragenStep1WebForm6.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatientenEintragenStep2.aspx.cs">
+      <DependentUpon>PatientenEintragenStep2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientenEintragenStep2.aspx.designer.cs">
+      <DependentUpon>PatientenEintragenStep2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
