@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="Model1TargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UsersSet" EntityType="Model1.Users" />
+          <EntitySet Name="RollenSet" EntityType="Model1.Rollen" />
+          <EntitySet Name="ZentrenSet" EntityType="Model1.Zentren" />
+          <EntitySet Name="StudienÜbersichtSet" EntityType="Model1.StudienÜbersicht" />
+          <EntitySet Name="StudieRollenNutzerZuteilungSet" EntityType="Model1.StudieRollenNutzerZuteilung" />
+          <AssociationSet Name="UsersStudieRollenNutzerZuteilung" Association="Model1.UsersStudieRollenNutzerZuteilung">
+            <End Role="Users" EntitySet="UsersSet" />
+            <End Role="StudieRollenNutzerZuteilung" EntitySet="StudieRollenNutzerZuteilungSet" />
+          </AssociationSet>
+          <AssociationSet Name="RollenStudieRollenNutzerZuteilung" Association="Model1.RollenStudieRollenNutzerZuteilung">
+            <End Role="Rollen" EntitySet="RollenSet" />
+            <End Role="StudieRollenNutzerZuteilung" EntitySet="StudieRollenNutzerZuteilungSet" />
+          </AssociationSet>
+          <AssociationSet Name="StudienÜbersichtStudieRollenNutzerZuteilung" Association="Model1.StudienÜbersichtStudieRollenNutzerZuteilung">
+            <End Role="StudienÜbersicht" EntitySet="StudienÜbersichtSet" />
+            <End Role="StudieRollenNutzerZuteilung" EntitySet="StudieRollenNutzerZuteilungSet" />
+          </AssociationSet>
+          <AssociationSet Name="ZentrenStudieRollenNutzerZuteilung" Association="Model1.ZentrenStudieRollenNutzerZuteilung">
+            <End Role="Zentren" EntitySet="ZentrenSet" />
+            <End Role="StudieRollenNutzerZuteilung" EntitySet="StudieRollenNutzerZuteilungSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailAdresse" Type="String" Nullable="false" />
+          <Property Name="Nachname" Type="String" Nullable="false" />
+          <Property Name="Vorname" Type="String" Nullable="false" />
+          <Property Name="Titel" Type="String" Nullable="true" />
+          <Property Name="Zentrumsname" Type="String" Nullable="false" />
+          <Property Name="Adresse" Type="String" Nullable="false" />
+          <Property Name="Telefonnummer" Type="String" Nullable="false" />
+          <Property Name="TelefonnummerAlt" Type="String" Nullable="false" />
+          <Property Name="Faxnummer" Type="String" Nullable="false" />
+          <Property Name="IstAdmin" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="StudieRollenNutzerZuteilung" Relationship="Model1.UsersStudieRollenNutzerZuteilung" FromRole="Users" ToRole="StudieRollenNutzerZuteilung" />
+        </EntityType>
+        <EntityType Name="Rollen">
+          <Key>
+            <PropertyRef Name="RollenID" />
+          </Key>
+          <Property Name="RollenID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rollenbezeichnung" Type="String" Nullable="false" />
+          <NavigationProperty Name="StudieRollenNutzerZuteilung" Relationship="Model1.RollenStudieRollenNutzerZuteilung" FromRole="Rollen" ToRole="StudieRollenNutzerZuteilung" />
+        </EntityType>
+        <EntityType Name="Zentren">
+          <Key>
+            <PropertyRef Name="ZentrumsID" />
+          </Key>
+          <Property Name="ZentrumsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Zentrumsname" Type="String" Nullable="false" />
+          <NavigationProperty Name="StudieRollenNutzerZuteilung" Relationship="Model1.ZentrenStudieRollenNutzerZuteilung" FromRole="Zentren" ToRole="StudieRollenNutzerZuteilung" />
+        </EntityType>
+        <EntityType Name="StudienÜbersicht">
+          <Key>
+            <PropertyRef Name="StudienID" />
+            <PropertyRef Name="Beratungsnummer" />
+          </Key>
+          <Property Name="StudienID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Beratungsnummer" Type="String" Nullable="false" />
+          <Property Name="Studienname" Type="String" Nullable="false" />
+          <Property Name="HptVerMitarbeiter" Type="String" Nullable="false" />
+          <NavigationProperty Name="StudieRollenNutzerZuteilung" Relationship="Model1.StudienÜbersichtStudieRollenNutzerZuteilung" FromRole="StudienÜbersicht" ToRole="StudieRollenNutzerZuteilung" />
+        </EntityType>
+        <EntityType Name="StudieRollenNutzerZuteilung">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <NavigationProperty Name="Users" Relationship="Model1.UsersStudieRollenNutzerZuteilung" FromRole="StudieRollenNutzerZuteilung" ToRole="Users" />
+          <Property Name="UsersUserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rollen" Relationship="Model1.RollenStudieRollenNutzerZuteilung" FromRole="StudieRollenNutzerZuteilung" ToRole="Rollen" />
+          <Property Name="RollenRollenID" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="StudienÜbersicht" Relationship="Model1.StudienÜbersichtStudieRollenNutzerZuteilung" FromRole="StudieRollenNutzerZuteilung" ToRole="StudienÜbersicht" />
+          <Property Name="StudienÜbersichtStudienID" Type="Int32" Nullable="true" />
+          <Property Name="StudienÜbersichtBeratungsnummer" Type="String" Nullable="true" />
+          <NavigationProperty Name="Zentren" Relationship="Model1.ZentrenStudieRollenNutzerZuteilung" FromRole="StudieRollenNutzerZuteilung" ToRole="Zentren" />
+          <Property Name="ZentrenZentrumsID" Type="Int32" Nullable="true" />
+          <Property Name="ID" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="UsersStudieRollenNutzerZuteilung">
+          <End Type="Model1.Users" Role="Users" Multiplicity="1" />
+          <End Type="Model1.StudieRollenNutzerZuteilung" Role="StudieRollenNutzerZuteilung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="StudieRollenNutzerZuteilung">
+              <PropertyRef Name="UsersUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RollenStudieRollenNutzerZuteilung">
+          <End Type="Model1.Rollen" Role="Rollen" Multiplicity="0..1" />
+          <End Type="Model1.StudieRollenNutzerZuteilung" Role="StudieRollenNutzerZuteilung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rollen">
+              <PropertyRef Name="RollenID" />
+            </Principal>
+            <Dependent Role="StudieRollenNutzerZuteilung">
+              <PropertyRef Name="RollenRollenID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StudienÜbersichtStudieRollenNutzerZuteilung">
+          <End Type="Model1.StudienÜbersicht" Role="StudienÜbersicht" Multiplicity="0..1" />
+          <End Type="Model1.StudieRollenNutzerZuteilung" Role="StudieRollenNutzerZuteilung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudienÜbersicht">
+              <PropertyRef Name="StudienID" />
+              <PropertyRef Name="Beratungsnummer" />
+            </Principal>
+            <Dependent Role="StudieRollenNutzerZuteilung">
+              <PropertyRef Name="StudienÜbersichtStudienID" />
+              <PropertyRef Name="StudienÜbersichtBeratungsnummer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ZentrenStudieRollenNutzerZuteilung">
+          <End Type="Model1.Zentren" Role="Zentren" Multiplicity="0..1" />
+          <End Type="Model1.StudieRollenNutzerZuteilung" Role="StudieRollenNutzerZuteilung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zentren">
+              <PropertyRef Name="ZentrumsID" />
+            </Principal>
+            <Dependent Role="StudieRollenNutzerZuteilung">
+              <PropertyRef Name="ZentrenZentrumsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model1" />
+        <Alias Key="Target" Value="Model1.Store" />
+        <EntityContainerMapping CdmEntityContainer="Model1Container" StorageEntityContainer="Model1TargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

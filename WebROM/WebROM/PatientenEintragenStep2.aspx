@@ -44,44 +44,51 @@
 
                             <asp:TableRow>
                                 <asp:TableCell><asp:Label ID="LabelSchichtkriterium1" runat="server" Text="Schichtkriterium 1:" Style="margin-right:25px"></asp:Label></asp:TableCell>
-                                <asp:TableCell><asp:DropDownList ID="DropDownListSchichtkriterium1" runat="server" Style="width:100%"></asp:DropDownList></asp:TableCell>
+                                <asp:TableCell>
+                                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                                   </asp:TableCell>
                                 <asp:TableCell></asp:TableCell>
                                 <asp:TableCell>
-                                    <asp:Label ID="Label7" runat="server" Text="Informed Consent gegeben?"></asp:Label></asp:TableCell>
+                                    </asp:TableCell>
                                 <asp:TableCell>
-                                    <asp:CheckBox ID="CheckBox1" runat="server" /></asp:TableCell>
+                                    </asp:TableCell>
                            </asp:TableRow>
 
                             <asp:TableRow>
                                 <asp:TableCell><asp:Label ID="Label1" runat="server" Text="Schichtkriterium 2:" Style="margin-right:25px"></asp:Label></asp:TableCell>
-                                <asp:TableCell><asp:DropDownList ID="DropDownList1" runat="server" Style="width:100%"></asp:DropDownList></asp:TableCell>
+                                <asp:TableCell>
+                                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></asp:TableCell>
                                 <asp:TableCell></asp:TableCell>
                             </asp:TableRow>
 
                                                        <asp:TableRow>
                                 <asp:TableCell><asp:Label ID="Label3" runat="server" Text="Schichtkriterium 3:" Style="margin-right:25px"></asp:Label></asp:TableCell>
-                                <asp:TableCell><asp:DropDownList ID="DropDownList2" runat="server" Style="width:100%"></asp:DropDownList></asp:TableCell>
+                                <asp:TableCell>
+                                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></asp:TableCell>
                                 <asp:TableCell></asp:TableCell>
                             </asp:TableRow>
 
                                                        <asp:TableRow>
                                 <asp:TableCell><asp:Label ID="Label4" runat="server" Text="Schichtkriterium 4:" Style="margin-right:25px"></asp:Label></asp:TableCell>
-                                <asp:TableCell><asp:DropDownList ID="DropDownList3" runat="server" Style="width:100%"></asp:DropDownList></asp:TableCell>
+                                <asp:TableCell>
+                                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox></asp:TableCell>
                                 <asp:TableCell></asp:TableCell>
                             </asp:TableRow>
 
                                                        <asp:TableRow>
                                 <asp:TableCell><asp:Label ID="Label5" runat="server" Text="Schichtkriterium 5:" Style="margin-right:25px"></asp:Label></asp:TableCell>
-                                <asp:TableCell><asp:DropDownList ID="DropDownList4" runat="server" Style="width:100%"></asp:DropDownList></asp:TableCell>
+                                <asp:TableCell>
+                                    <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox></asp:TableCell>
                                 <asp:TableCell></asp:TableCell>
                                 <asp:TableCell></asp:TableCell>
-                                <asp:TableCell><asp:Button ID="Button1" runat="server" Text="Weiter" Style="float:right" /></asp:TableCell>
+                                <asp:TableCell></asp:TableCell>
                             </asp:TableRow>
 
                         </asp:Table>
-
+                            
                  </asp:Panel>
-            
+                                <asp:Button ID="Button2" runat="server" Text="Zurück" Style="float:left" />
+                                <asp:Button ID="Button1" runat="server" Text="Weiter" Style="float:right" />
          </asp:Panel>
      </div>
 

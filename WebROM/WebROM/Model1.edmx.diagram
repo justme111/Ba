@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ac90a5588e544f25b5c39088bb21fe01" Name="Diagram1" >
+        <EntityTypeShape EntityType="Model1.Users" Width="1.5" PointX="2.375" PointY="1.375" />
+        <EntityTypeShape EntityType="Model1.Rollen" Width="1.625" PointX="4.5" PointY="1.5" />
+        <EntityTypeShape EntityType="Model1.Zentren" Width="1.5" PointX="4.5" PointY="3.5" />
+        <EntityTypeShape EntityType="Model1.StudienÜbersicht" Width="1.5" PointX="6.75" PointY="1.5" />
+        <EntityTypeShape EntityType="Model1.StudieRollenNutzerZuteilung" Width="1.5" PointX="7.125" PointY="3.875" />
+        <AssociationConnector Association="Model1.UsersStudieRollenNutzerZuteilung" />
+        <AssociationConnector Association="Model1.RollenStudieRollenNutzerZuteilung" />
+        <AssociationConnector Association="Model1.StudienÜbersichtStudieRollenNutzerZuteilung" />
+        <AssociationConnector Association="Model1.ZentrenStudieRollenNutzerZuteilung" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
