@@ -76,3 +76,6 @@ C:\Users\Michi\Dropbox\BA\Ba\WebROM\WebROM\bin\de\Microsoft.AspNet.FriendlyUrls.
 C:\Users\Michi\Dropbox\BA\Ba\WebROM\WebROM\obj\Debug\WebROM.csprojResolveAssemblyReference.cache
 C:\Users\Michi\Dropbox\BA\Ba\WebROM\WebROM\obj\Debug\WebROM.dll
 C:\Users\Michi\Dropbox\BA\Ba\WebROM\WebROM\obj\Debug\WebROM.pdb
+C:\Users\Michi\Dropbox\BA\Ba\WebROM\WebROM\bin\EntityFramework.SqlServer.dll
+C:\Users\Michi\Dropbox\BA\Ba\WebROM\WebROM\bin\EntityFramework.SqlServer.xml
+C:\Users\Michi\Dropbox\BA\Ba\WebROM\WebROM\bin\de\EntityFramework.SqlServer.resources.dll

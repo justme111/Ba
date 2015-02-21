@@ -66,7 +66,7 @@
                             <asp:TableCell></asp:TableCell>
                             <asp:TableCell>
                                 <asp:Button ID="ButtonWeiter" runat="server" Text="Weiter" />
-                                <asp:Button ID="ButtonAnlegen" runat="server" Text="Anlegen" />
+                               <asp:Button ID="ButtonAnlegen" runat="server" Text="Anlegen" OnClick="ButtonAnlegen_Click" />
                             </asp:TableCell>
                         </asp:TableRow>
 
@@ -75,5 +75,5 @@
               Felder mit * sind optional
            </asp:Panel>
         </div>
-        
+         
 </asp:Content>
